@@ -355,7 +355,7 @@ class DecisionCreate(CreateView):
         return context
 
     def get_success_url(self, *args, **kwargs):
-        return reverse('publicweb_item_list', args=[self.organization.slug, self.status])
+        return reverse('publicweb_item_list', args=[self.organization.slug, self.object.status])
 
     def post(self, *args, **kwargs):
         if self.request.POST.get('submit', None) == "Cancel":
